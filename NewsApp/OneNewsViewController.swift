@@ -18,6 +18,8 @@ class OneNewsViewController: UIViewController {
     
     @IBOutlet weak var labelDescription: UILabel!
     
+    @IBOutlet weak var labelPublishedAt: UILabel!
+    
     @IBAction func pushOpenAction(_ sender: Any) {
     }
     
@@ -26,6 +28,9 @@ class OneNewsViewController: UIViewController {
 
         labelTitle.text = article.title
         labelDescription.text = article.description
+        labelPublishedAt.text = article.publishedAt
+        imageView.image = UIImage(data: try! Data(contentsOf: URL(string:article.urlToImage)!))
+        
     
     }
     
